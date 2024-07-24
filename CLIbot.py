@@ -12,7 +12,7 @@ class Name(Field):
     """Class for address book record name field"""
 
 class Phone(Field):
-    """Class for address book record name field"""
+    """Class for address book record phone field"""
     def __init__(self, phone: str):
         self.value = self.__validate_phone(phone)
 
@@ -67,7 +67,7 @@ class AddressBook(UserDict):
         self.data[record.name.value] = record
 
     def find(self, name):
-        """Method to find a record by name."""
+        """Method to find a record by name"""
         if name not in self.data:
             raise KeyError(f"Record with name '{name}' not found.")
         return self.data.get(name)
